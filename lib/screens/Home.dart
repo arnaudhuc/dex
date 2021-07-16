@@ -1,5 +1,6 @@
 import 'package:dex/actions/PokeApi.dart';
-import 'package:dex/types/PokeAPITypes.dart';
+import 'package:dex/components/PokemonCard.dart';
+import 'package:dex/model/PokemonRootModel.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatefulWidget {
@@ -31,11 +32,18 @@ class _HomeState extends State<Home> {
       body: FutureBuilder<PokeAPIRootTypes>(
         future: getAll,
         builder: (context, snapshot) {
-          print(snapshot);
           if (snapshot.hasData) {
-            return Text("${snapshot.data!.results[0]}");
+            return SingleChildScrollView(
+              child: Center(
+                child: Column(
+                  children: snapshot.data!.results
+                      .map((pokemon) => PokemonCard(name: pokemon.name))
+                      .toList(),
+                ),
+              ),
+            );
           } else if (snapshot.hasError) {
-            print('error');
+            print(snapshot.stackTrace);
             return Text("${snapshot.error}");
           }
 

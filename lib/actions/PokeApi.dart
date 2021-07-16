@@ -1,11 +1,10 @@
-import 'package:dex/types/PokeAPITypes.dart';
+import 'package:dex/model/PokemonRootModel.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
 class PokeApi {
   Future<PokeAPIRootTypes> getAll() async {
-    print('Get All');
-    var url = Uri.parse('https://pokeapi.co/api/v2/pokemon');
+    var url = Uri.parse('https://pokeapi.co/api/v2/pokemon?limit=151');
     final response = await http.get(url);
     if (response.statusCode == 200) {
       // If the server did return a 200 OK response,
