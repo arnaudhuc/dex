@@ -11,13 +11,6 @@ class Abilities {
     required this.slot,
   });
 
-  // Abilities.fromJson(Map<String, dynamic> json) {
-  //   ability =
-  //       json['ability'] != null ? new Ability.fromJson(json['ability']) : null;
-  //   isHidden = json['is_hidden'];
-  //   slot = json['slot'];
-  // }
-
   factory Abilities.fromJson(Map<String, dynamic> json) {
     return Abilities(
       ability: getAbility(json),

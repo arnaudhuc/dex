@@ -8,13 +8,6 @@ class Other {
   });
 
   factory Other.fromJson(Map<String, dynamic> json) {
-    // dreamWorld = json['dream_world'] != null
-    //     ? new DreamWorld.fromJson(json['dream_world'])
-    //     : null;
-    // officialArtwork = json['official-artwork'] != null
-    //     ? new OfficialArtwork.fromJson(json['official-artwork'])
-    //     : null;
-
     return Other(
       dreamWorld: getDreamWorld(json),
       officialArtwork: getOfficialArtwork(json),

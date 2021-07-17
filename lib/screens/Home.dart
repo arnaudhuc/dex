@@ -35,7 +35,7 @@ class _HomeState extends State<Home> {
           if (snapshot.hasData) {
             return SingleChildScrollView(
               child: Center(
-                child: Column(
+                child: Wrap(
                   children: snapshot.data!.results
                       .map((pokemon) => PokemonCard(name: pokemon.name))
                       .toList(),

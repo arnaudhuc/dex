@@ -1,16 +1,16 @@
 import 'package:dex/model/NamedApiResource.dart';
 
-class PokemonHeldItem {
+class HeldItem {
   final NamedApiResource item;
   final List<PokemonHeldItemVersion> versionDetails;
 
-  PokemonHeldItem({
+  HeldItem({
     required this.item,
     required this.versionDetails,
   });
 
-  factory PokemonHeldItem.fromJson(Map<String, dynamic> json) {
-    return PokemonHeldItem(
+  factory HeldItem.fromJson(Map<String, dynamic> json) {
+    return HeldItem(
       item: json['item'],
       versionDetails: getVersionDetails(json),
     );

@@ -1,5 +1,5 @@
-import 'package:dex/model/Generations/PokemonTypeGenerations.dart';
-import 'package:dex/model/PokemonTypeSpriteOther.dart';
+import 'package:dex/model/Generations/VersionModel.dart';
+import 'package:dex/model/Other.dart';
 
 class Sprites {
   String backDefault;
