@@ -18,7 +18,6 @@ class _HomeState extends State<Home> {
   @override
   void initState() {
     super.initState();
-    final pokeApi = new PokeApi();
   }
 
   @override
@@ -37,14 +36,15 @@ class _HomeState extends State<Home> {
               child: Center(
                 child: Wrap(
                   children: snapshot.data!.results
-                      .map((pokemon) => PokemonCard(name: pokemon.name))
+                      .map((pokemon) => PokemonCard(pokemon: pokemon))
                       .toList(),
                 ),
               ),
             );
           } else if (snapshot.hasError) {
             print(snapshot.stackTrace);
-            return Text("${snapshot.error}");
+            print(snapshot.error);
+            return Text("ERROR : ${snapshot.error}");
           }
 
           // By default, show a loading spinner.

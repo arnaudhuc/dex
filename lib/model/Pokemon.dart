@@ -1,32 +1,33 @@
-import 'package:dex/model/NamedApiResource.dart';
-import 'package:dex/model/HeldItem.dart';
-import 'package:dex/model/Abilities.dart';
-import 'package:dex/model/GameIndices.dart';
-import 'package:dex/model/Sprites.dart';
-import 'package:dex/model/Stats.dart';
-import 'package:dex/model/Types.dart';
-import 'package:dex/model/Moves.dart';
+import 'dart:convert';
+
+import 'package:collection/collection.dart';
+
+import 'Abilities.dart';
+import 'GameIndice.dart';
+import 'Generations/GenerationVIII.dart';
+import 'Move.dart';
+import 'NamedApiResource.dart';
+import 'Sprites.dart';
 
 class Pokemon {
-  final Iterable<Abilities>? abilities;
+  final List<Abilities> abilities;
   final int baseExperience;
-  final Iterable<NamedApiResource> forms;
-  final Iterable<GameIndices> gameIndices;
+  final List<NamedApiResource> forms;
+  final List<GameIndice> gameIndices;
   final int height;
-  final Iterable<HeldItem> heldItems;
+  final List<dynamic> heldItems;
   final int id;
   final bool isDefault;
   final String locationAreaEncounters;
-  final Iterable<Moves> moves;
+  final List<Move> moves;
   final String name;
   final int order;
-  final Iterable<Null> pastTypes;
+  final List<dynamic> pastTypes;
   final NamedApiResource species;
   final Sprites sprites;
-  final Iterable<Stats> stats;
-  final Iterable<Types> types;
+  final List<Stat> stats;
+  final List<Types> types;
   final int weight;
-
   Pokemon({
     required this.abilities,
     required this.baseExperience,
@@ -48,91 +49,152 @@ class Pokemon {
     required this.weight,
   });
 
-  factory Pokemon.fromJson(Map<String, dynamic> json) {
+  Pokemon copyWith({
+    List<Abilities>? abilities,
+    int? baseExperience,
+    Iterable<NamedApiResource>? forms,
+    List<GameIndice>? gameIndices,
+    int? height,
+    List<dynamic>? heldItems,
+    int? id,
+    bool? isDefault,
+    String? locationAreaEncounters,
+    List<Move>? moves,
+    String? name,
+    int? order,
+    List<dynamic>? pastTypes,
+    NamedApiResource? species,
+    Sprites? sprites,
+    List<Stat>? stats,
+    List<Types>? types,
+    int? weight,
+  }) {
     return Pokemon(
-      abilities: getAbilities(json),
-      baseExperience: json['base_experience'],
-      forms: getForms(json),
-      gameIndices: getGameIndices(json),
-      height: json['height'],
-      heldItems: getHeldItems(json),
-      id: json['id'],
-      isDefault: json['is_default'],
-      locationAreaEncounters: json['location_area_encounters'],
-      moves: getMoves(json),
-      name: json['name'],
-      order: json['order'],
-      pastTypes: json['past_types'],
-      species: NamedApiResource.fromJson(json['species']),
-      sprites: Sprites.fromJson(json['sprites']),
-      stats: getStats(json),
-      types: getTypes(json),
-      weight: json['weight'],
+      abilities: abilities ?? this.abilities,
+      baseExperience: baseExperience ?? this.baseExperience,
+      forms: this.forms,
+      gameIndices: gameIndices ?? this.gameIndices,
+      height: height ?? this.height,
+      heldItems: heldItems ?? this.heldItems,
+      id: id ?? this.id,
+      isDefault: isDefault ?? this.isDefault,
+      locationAreaEncounters:
+          locationAreaEncounters ?? this.locationAreaEncounters,
+      moves: moves ?? this.moves,
+      name: name ?? this.name,
+      order: order ?? this.order,
+      pastTypes: pastTypes ?? this.pastTypes,
+      species: species ?? this.species,
+      sprites: sprites ?? this.sprites,
+      stats: stats ?? this.stats,
+      types: types ?? this.types,
+      weight: weight ?? this.weight,
     );
   }
 
-  static Iterable<Abilities> getAbilities(Map<String, dynamic> json) {
-    final Iterable<dynamic> abilities = json['abilities'];
-    final Iterable<Abilities> pokeApiResults =
-        abilities.map<Abilities>((ability) => Abilities.fromJson(ability));
-
-    return pokeApiResults;
+  Map<String, dynamic> toMap() {
+    return {
+      'abilities': abilities.map((x) => x.toMap()).toList(),
+      'base_experience': baseExperience,
+      'forms': forms,
+      'game_indices': gameIndices.map((x) => x.toMap()).toList(),
+      'height': height,
+      'held_items': heldItems,
+      'id': id,
+      'is_default': isDefault,
+      'location_area_encounters': locationAreaEncounters,
+      'moves': moves.map((x) => x.toMap()).toList(),
+      'name': name,
+      'order': order,
+      'past_types': pastTypes,
+      'species': species,
+      'sprites': sprites.toMap(),
+      'stats': stats.map((x) => x.toMap()).toList(),
+      'types': types.map((x) => x.toMap()).toList(),
+      'weight': weight,
+    };
   }
 
-  //TODO - to fix
-  static Iterable<NamedApiResource> getForms(Map<String, dynamic> json) {
-    final Iterable<dynamic> forms = json['forms'];
-    final Iterable<NamedApiResource> formsList =
-        forms.map<NamedApiResource>((form) => NamedApiResource.fromJson(form));
-
-    return formsList;
+  factory Pokemon.fromMap(Map<String, dynamic> map) {
+    return Pokemon(
+      abilities: List<Abilities>.from(
+          map['abilities']?.map((x) => Abilities.fromMap(x))),
+      baseExperience: map['base_experience'],
+      forms: map['forms'],
+      gameIndices: List<GameIndice>.from(
+          map['game_indices']?.map((x) => GameIndice.fromMap(x))),
+      height: map['height'],
+      heldItems: List<dynamic>.from(map['held_items']),
+      id: map['id'],
+      isDefault: map['is_default'],
+      locationAreaEncounters: map['location_area_encounters'],
+      moves: List<Move>.from(map['moves']?.map((x) => Move.fromMap(x))),
+      name: map['name'],
+      order: map['order'],
+      pastTypes: List<dynamic>.from(map['past_types']),
+      species: map['species'],
+      sprites: Sprites.fromMap(map['sprites']),
+      stats: List<Stat>.from(map['stats']?.map((x) => Stat.fromMap(x))),
+      types: List<Types>.from(map['types']?.map((x) => Types.fromMap(x))),
+      weight: map['weight'],
+    );
   }
 
-  static Iterable<GameIndices> getGameIndices(Map<String, dynamic> json) {
-    final Iterable<dynamic> gameIndices = json['game_indices'];
-    final Iterable<GameIndices> gameIndicesList = gameIndices
-        .map<GameIndices>((gameIndice) => GameIndices.fromJson(gameIndice));
+  String toJson() => json.encode(toMap());
 
-    return gameIndicesList;
+  factory Pokemon.fromJson(String source) =>
+      Pokemon.fromMap(json.decode(source));
+
+  @override
+  String toString() {
+    return 'Pokemon(abilities: $abilities, base_experience: $baseExperience, forms: $forms, game_indices: $gameIndices, height: $height, held_items: $heldItems, id: $id, is_default: $isDefault, location_area_encounters: $locationAreaEncounters, moves: $moves, name: $name, order: $order, past_types: $pastTypes, species: $species, sprites: $sprites, stats: $stats, types: $types, weight: $weight)';
   }
 
-  static Iterable<HeldItem> getHeldItems(Map<String, dynamic> json) {
-    final Iterable<dynamic> heldItems = json['held_items'];
-    final Iterable<HeldItem> heldItemsList =
-        heldItems.map<HeldItem>((items) => HeldItem.fromJson(items));
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) return true;
+    final listEquals = const DeepCollectionEquality().equals;
 
-    return heldItemsList;
+    return other is Pokemon &&
+        listEquals(other.abilities, abilities) &&
+        other.baseExperience == baseExperience &&
+        listEquals(other.forms, forms) &&
+        listEquals(other.gameIndices, gameIndices) &&
+        other.height == height &&
+        listEquals(other.heldItems, heldItems) &&
+        other.id == id &&
+        other.isDefault == isDefault &&
+        other.locationAreaEncounters == locationAreaEncounters &&
+        listEquals(other.moves, moves) &&
+        other.name == name &&
+        other.order == order &&
+        listEquals(other.pastTypes, pastTypes) &&
+        other.species == species &&
+        other.sprites == sprites &&
+        listEquals(other.stats, stats) &&
+        listEquals(other.types, types) &&
+        other.weight == weight;
   }
 
-  static Iterable<Moves> getMoves(Map<String, dynamic> json) {
-    final Iterable<dynamic> moves = json['moves'];
-    final Iterable<Moves> movesList =
-        moves.map<Moves>((move) => Moves.fromJson(move));
-
-    return movesList;
-  }
-
-  static Iterable<HeldItem> getSpecies(Map<String, dynamic> json) {
-    final Iterable<dynamic> species = json['species'];
-    final Iterable<HeldItem> speciesList =
-        species.map<HeldItem>((type) => HeldItem.fromJson(type));
-
-    return speciesList;
-  }
-
-  static Iterable<Stats> getStats(Map<String, dynamic> json) {
-    final Iterable<dynamic> stats = json['stats'];
-    final Iterable<Stats> statsList =
-        stats.map<Stats>((stat) => Stats.fromJson(stat));
-
-    return statsList;
-  }
-
-  static Iterable<Types> getTypes(Map<String, dynamic> json) {
-    final Iterable<dynamic> types = json['types'];
-    final Iterable<Types> typesList =
-        types.map<Types>((type) => Types.fromJson(type));
-
-    return typesList;
+  @override
+  int get hashCode {
+    return abilities.hashCode ^
+        baseExperience.hashCode ^
+        forms.hashCode ^
+        gameIndices.hashCode ^
+        height.hashCode ^
+        heldItems.hashCode ^
+        id.hashCode ^
+        isDefault.hashCode ^
+        locationAreaEncounters.hashCode ^
+        moves.hashCode ^
+        name.hashCode ^
+        order.hashCode ^
+        pastTypes.hashCode ^
+        species.hashCode ^
+        sprites.hashCode ^
+        stats.hashCode ^
+        types.hashCode ^
+        weight.hashCode;
   }
 }

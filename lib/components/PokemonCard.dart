@@ -1,11 +1,12 @@
+import 'package:dex/model/NamedApiResource.dart';
 import 'package:flutter/material.dart';
 
 class PokemonCard extends StatefulWidget {
-  final String name;
+  final NamedApiResource pokemon;
 
   const PokemonCard({
     Key? key,
-    required this.name,
+    required this.pokemon,
   }) : super(key: key);
 
   @override
@@ -22,7 +23,7 @@ class _PokemonCardState extends State<PokemonCard> {
             // Add GestureDetector
             Text('Numero : '),
             Text('Ici mon image'),
-            Text(widget.name),
+            Text(widget.pokemon.name),
             Text("ici les types"),
           ],
         ),
