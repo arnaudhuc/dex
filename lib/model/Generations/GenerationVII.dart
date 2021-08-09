@@ -21,14 +21,14 @@ class GenerationVII {
   Map<String, dynamic> toMap() {
     return {
       'icons': icons.toMap(),
-      'ultraSunUltraMoon': ultraSunUltraMoon.toMap(),
+      'ultra-sun-ultra-moon': ultraSunUltraMoon.toMap(),
     };
   }
 
   factory GenerationVII.fromMap(Map<String, dynamic> map) {
     return GenerationVII(
       icons: Icons.fromMap(map['icons']),
-      ultraSunUltraMoon: UltraSunUltraMoon.fromMap(map['ultraSunUltraMoon']),
+      ultraSunUltraMoon: UltraSunUltraMoon.fromMap(map['ultra-sun-ultra-moon']),
     );
   }
 
@@ -74,14 +74,14 @@ class Icons {
 
   Map<String, dynamic> toMap() {
     return {
-      'frontDefault': frontDefault,
+      'front_default': frontDefault,
       'frontFemale': frontFemale,
     };
   }
 
   factory Icons.fromMap(Map<String, dynamic> map) {
     return Icons(
-      frontDefault: map['frontDefault'],
+      frontDefault: map['front_default'],
       frontFemale: map['frontFemale'],
     );
   }
@@ -135,18 +135,18 @@ class UltraSunUltraMoon {
 
   Map<String, dynamic> toMap() {
     return {
-      'frontDefault': frontDefault,
+      'front_default': frontDefault,
       'frontFemale': frontFemale,
-      'frontShiny': frontShiny,
+      'front_shiny': frontShiny,
       'frontShinyFemale': frontShinyFemale,
     };
   }
 
   factory UltraSunUltraMoon.fromMap(Map<String, dynamic> map) {
     return UltraSunUltraMoon(
-      frontDefault: map['frontDefault'],
+      frontDefault: map['front_default'],
       frontFemale: map['frontFemale'],
-      frontShiny: map['frontShiny'],
+      frontShiny: map['front_shiny'],
       frontShinyFemale: map['frontShinyFemale'],
     );
   }

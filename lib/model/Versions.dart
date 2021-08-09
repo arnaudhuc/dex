@@ -53,27 +53,27 @@ class Versions {
 
   Map<String, dynamic> toMap() {
     return {
-      'generationI': generationI.toMap(),
-      'generationIi': generationIi.toMap(),
-      'generationIii': generationIii.toMap(),
-      'generationIv': generationIv.toMap(),
-      'generationV': generationV.toMap(),
-      'generationVi': generationVi.toMap(),
-      'generationVii': generationVii.toMap(),
-      'generationViii': generationViii.toMap(),
+      'generation-i': generationI.toMap(),
+      'generation-ii': generationIi.toMap(),
+      'generation-iii': generationIii.toMap(),
+      'generation-iv': generationIv.toMap(),
+      'generation-v': generationV.toMap(),
+      'generation-vi': generationVi.toMap(),
+      'generation-vii': generationVii.toMap(),
+      'generation-viii': generationViii.toMap(),
     };
   }
 
   factory Versions.fromMap(Map<String, dynamic> map) {
     return Versions(
-      generationI: GenerationI.fromMap(map['generationI']),
-      generationIi: GenerationII.fromMap(map['generationIi']),
-      generationIii: GenerationIII.fromMap(map['generationIii']),
-      generationIv: GenerationIV.fromMap(map['generationIv']),
-      generationV: GenerationV.fromMap(map['generationV']),
-      generationVi: GenerationVI.fromMap(map['generationVi']),
-      generationVii: GenerationVII.fromMap(map['generationVii']),
-      generationViii: GenerationVIII.fromMap(map['generationViii']),
+      generationI: GenerationI.fromMap(map['generation-i']),
+      generationIi: GenerationII.fromMap(map['generation-ii']),
+      generationIii: GenerationIII.fromMap(map['generation-iii']),
+      generationIv: GenerationIV.fromMap(map['generation-iv']),
+      generationV: GenerationV.fromMap(map['generation-v']),
+      generationVi: GenerationVI.fromMap(map['generation-vi']),
+      generationVii: GenerationVII.fromMap(map['generation-vii']),
+      generationViii: GenerationVIII.fromMap(map['generation-viii']),
     );
   }
 

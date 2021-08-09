@@ -20,14 +20,14 @@ class GenerationI {
 
   Map<String, dynamic> toMap() {
     return {
-      'redBlue': redBlue.toMap(),
+      'red-blue': redBlue.toMap(),
       'yellow': yellow.toMap(),
     };
   }
 
   factory GenerationI.fromMap(Map<String, dynamic> map) {
     return GenerationI(
-      redBlue: RedBlue.fromMap(map['redBlue']),
+      redBlue: RedBlue.fromMap(map['red-blue']),
       yellow: Yellow.fromMap(map['yellow']),
     );
   }
@@ -81,18 +81,18 @@ class RedBlue {
 
   Map<String, dynamic> toMap() {
     return {
-      'backDefault': backDefault,
+      'back_default': backDefault,
       'back_gray': backGray,
-      'frontDefault': frontDefault,
+      'front_default': frontDefault,
       'front_gray': frontGray,
     };
   }
 
   factory RedBlue.fromMap(Map<String, dynamic> map) {
     return RedBlue(
-      backDefault: map['backDefault'],
+      backDefault: map['back_default'],
       backGray: map['back_gray'],
-      frontDefault: map['frontDefault'],
+      frontDefault: map['front_default'],
       frontGray: map['front_gray'],
     );
   }
@@ -155,18 +155,18 @@ class Yellow {
 
   Map<String, dynamic> toMap() {
     return {
-      'backDefault': backDefault,
+      'back_default': backDefault,
       'back_gray': backGray,
-      'frontDefault': frontDefault,
+      'front_default': frontDefault,
       'front_gray': frontGray,
     };
   }
 
   factory Yellow.fromMap(Map<String, dynamic> map) {
     return Yellow(
-      backDefault: map['backDefault'],
+      backDefault: map['back_default'],
       backGray: map['back_gray'],
-      frontDefault: map['frontDefault'],
+      frontDefault: map['front_default'],
       frontGray: map['front_gray'],
     );
   }

@@ -34,7 +34,7 @@ class Abilities {
 
   factory Abilities.fromMap(Map<String, dynamic> map) {
     return Abilities(
-      ability: map['ability'],
+      ability: NamedApiResource.fromMap(map['ability']),
       isHidden: map['is_hidden'],
       slot: map['slot'],
     );

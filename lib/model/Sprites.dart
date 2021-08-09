@@ -54,14 +54,14 @@ class Sprites {
 
   Map<String, dynamic> toMap() {
     return {
-      'backDefault': backDefault,
-      'backFemale': backFemale,
-      'backShiny': backShiny,
-      'backShinyFemale': backShinyFemale,
-      'frontDefault': frontDefault,
-      'frontFemale': frontFemale,
-      'frontShiny': frontShiny,
-      'frontShinyFemale': frontShinyFemale,
+      'back_default': backDefault,
+      'back_female': backFemale,
+      'back_shiny': backShiny,
+      'back_shiny_female': backShinyFemale,
+      'front_default': frontDefault,
+      'front_female': frontFemale,
+      'front_shiny': frontShiny,
+      'front_shiny_female': frontShinyFemale,
       'other': other.toMap(),
       'versions': versions.toMap(),
     };
@@ -69,14 +69,14 @@ class Sprites {
 
   factory Sprites.fromMap(Map<String, dynamic> map) {
     return Sprites(
-      backDefault: map['backDefault'],
-      backFemale: map['backFemale'],
-      backShiny: map['backShiny'],
-      backShinyFemale: map['backShinyFemale'],
-      frontDefault: map['frontDefault'],
-      frontFemale: map['frontFemale'],
-      frontShiny: map['frontShiny'],
-      frontShinyFemale: map['frontShinyFemale'],
+      backDefault: map['back_default'],
+      backFemale: map['back_female'],
+      backShiny: map['back_shiny'],
+      backShinyFemale: map['back_shiny_female'],
+      frontDefault: map['front_default'],
+      frontFemale: map['front_female'],
+      frontShiny: map['front_shiny'],
+      frontShinyFemale: map['front_shiny_female'],
       other: Other.fromMap(map['other']),
       versions: Versions.fromMap(map['versions']),
     );
@@ -126,34 +126,29 @@ class Sprites {
 }
 
 class Other {
-  final DreamWorld dreamWorld;
-  final OfficialArtwork officialArtwork;
+  final DreamWorld? dreamWorld;
   Other({
-    required this.dreamWorld,
-    required this.officialArtwork,
+    this.dreamWorld,
   });
+  // final OfficialArtwork? officialArtwork;
 
   Other copyWith({
     DreamWorld? dreamWorld,
-    OfficialArtwork? officialArtwork,
   }) {
     return Other(
       dreamWorld: dreamWorld ?? this.dreamWorld,
-      officialArtwork: officialArtwork ?? this.officialArtwork,
     );
   }
 
   Map<String, dynamic> toMap() {
     return {
-      'dream_world': dreamWorld.toMap(),
-      'officialArtwork': officialArtwork.toMap(),
+      'dream_world': dreamWorld?.toMap(),
     };
   }
 
   factory Other.fromMap(Map<String, dynamic> map) {
     return Other(
       dreamWorld: DreamWorld.fromMap(map['dream_world']),
-      officialArtwork: OfficialArtwork.fromMap(map['officialArtwork']),
     );
   }
 
@@ -162,20 +157,17 @@ class Other {
   factory Other.fromJson(String source) => Other.fromMap(json.decode(source));
 
   @override
-  String toString() =>
-      'Other(dream_world: $dreamWorld, officialArtwork: $officialArtwork)';
+  String toString() => 'Other(dreamWorld: $dreamWorld)';
 
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) return true;
 
-    return other is Other &&
-        other.dreamWorld == dreamWorld &&
-        other.officialArtwork == officialArtwork;
+    return other is Other && other.dreamWorld == dreamWorld;
   }
 
   @override
-  int get hashCode => dreamWorld.hashCode ^ officialArtwork.hashCode;
+  int get hashCode => dreamWorld.hashCode;
 }
 
 class DreamWorld {
@@ -198,15 +190,15 @@ class DreamWorld {
 
   Map<String, dynamic> toMap() {
     return {
-      'frontDefault': frontDefault,
-      'frontFemale': frontFemale,
+      'front_default': frontDefault,
+      'front_female': frontFemale,
     };
   }
 
   factory DreamWorld.fromMap(Map<String, dynamic> map) {
     return DreamWorld(
-      frontDefault: map['frontDefault'],
-      frontFemale: map['frontFemale'],
+      frontDefault: map['front_default'],
+      frontFemale: map['front_female'],
     );
   }
 
@@ -217,7 +209,7 @@ class DreamWorld {
 
   @override
   String toString() =>
-      'Dream_world(frontDefault: $frontDefault, frontFemale: $frontFemale)';
+      'Dream_world(front_default: $frontDefault, front_female: $frontFemale)';
 
   @override
   bool operator ==(Object other) {
@@ -248,13 +240,13 @@ class OfficialArtwork {
 
   Map<String, dynamic> toMap() {
     return {
-      'frontDefault': frontDefault,
+      'front_default': frontDefault,
     };
   }
 
   factory OfficialArtwork.fromMap(Map<String, dynamic> map) {
     return OfficialArtwork(
-      frontDefault: map['frontDefault'],
+      frontDefault: map['front_default'],
     );
   }
 
@@ -264,7 +256,7 @@ class OfficialArtwork {
       OfficialArtwork.fromMap(json.decode(source));
 
   @override
-  String toString() => 'Official_artwork(frontDefault: $frontDefault)';
+  String toString() => 'Official_artwork(front_default: $frontDefault)';
 
   @override
   bool operator ==(Object other) {

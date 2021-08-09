@@ -115,12 +115,16 @@ class Pokemon {
     };
   }
 
+  // repomnse[]
+
   factory Pokemon.fromMap(Map<String, dynamic> map) {
     return Pokemon(
       abilities: List<Abilities>.from(
           map['abilities']?.map((x) => Abilities.fromMap(x))),
       baseExperience: map['base_experience'],
-      forms: map['forms'],
+      forms: map['forms'].map<NamedApiResource>((form) {
+        return NamedApiResource.fromMap(form);
+      }).toList(),
       gameIndices: List<GameIndice>.from(
           map['game_indices']?.map((x) => GameIndice.fromMap(x))),
       height: map['height'],
@@ -132,7 +136,7 @@ class Pokemon {
       name: map['name'],
       order: map['order'],
       pastTypes: List<dynamic>.from(map['past_types']),
-      species: map['species'],
+      species: NamedApiResource.fromMap(map['species']),
       sprites: Sprites.fromMap(map['sprites']),
       stats: List<Stat>.from(map['stats']?.map((x) => Stat.fromMap(x))),
       types: List<Types>.from(map['types']?.map((x) => Types.fromMap(x))),

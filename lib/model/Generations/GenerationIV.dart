@@ -24,17 +24,17 @@ class GenerationIV {
 
   Map<String, dynamic> toMap() {
     return {
-      'diamondPearl': diamondPearl.toMap(),
-      'heartgoldSoulsilver': heartgoldSoulsilver.toMap(),
-      'platinum': platinum.toMap(),
+      'diamond-pearl': diamondPearl.toMap(),
+      'heartgold-soulsilver': heartgoldSoulsilver.toMap(),
+      ' ': platinum.toMap(),
     };
   }
 
   factory GenerationIV.fromMap(Map<String, dynamic> map) {
     return GenerationIV(
-      diamondPearl: DiamondPearl.fromMap(map['diamondPearl']),
+      diamondPearl: DiamondPearl.fromMap(map['diamond-pearl']),
       heartgoldSoulsilver:
-          HeartgoldSoulsilver.fromMap(map['heartgoldSoulsilver']),
+          HeartgoldSoulsilver.fromMap(map['heartgold-soulsilver']),
       platinum: Platinum.fromMap(map['platinum']),
     );
   }
@@ -107,26 +107,26 @@ class DiamondPearl {
 
   Map<String, dynamic> toMap() {
     return {
-      'backDefault': backDefault,
+      'back_default': backDefault,
       'backFemale': backFemale,
-      'backShiny': backShiny,
+      'back_shiny': backShiny,
       'backShinyFemale': backShinyFemale,
-      'frontDefault': frontDefault,
+      'front_default': frontDefault,
       'frontFemale': frontFemale,
-      'frontShiny': frontShiny,
+      'front_shiny': frontShiny,
       'frontShinyFemale': frontShinyFemale,
     };
   }
 
   factory DiamondPearl.fromMap(Map<String, dynamic> map) {
     return DiamondPearl(
-      backDefault: map['backDefault'],
+      backDefault: map['back_default'],
       backFemale: map['backFemale'],
-      backShiny: map['backShiny'],
+      backShiny: map['back_shiny'],
       backShinyFemale: map['backShinyFemale'],
-      frontDefault: map['frontDefault'],
+      frontDefault: map['front_default'],
       frontFemale: map['frontFemale'],
-      frontShiny: map['frontShiny'],
+      frontShiny: map['front_shiny'],
       frontShinyFemale: map['frontShinyFemale'],
     );
   }
@@ -213,26 +213,26 @@ class HeartgoldSoulsilver {
 
   Map<String, dynamic> toMap() {
     return {
-      'backDefault': backDefault,
+      'back_default': backDefault,
       'backFemale': backFemale,
-      'backShiny': backShiny,
+      'back_shiny': backShiny,
       'backShinyFemale': backShinyFemale,
-      'frontDefault': frontDefault,
+      'front_default': frontDefault,
       'frontFemale': frontFemale,
-      'frontShiny': frontShiny,
+      'front_shiny': frontShiny,
       'frontShinyFemale': frontShinyFemale,
     };
   }
 
   factory HeartgoldSoulsilver.fromMap(Map<String, dynamic> map) {
     return HeartgoldSoulsilver(
-      backDefault: map['backDefault'],
+      backDefault: map['back_default'],
       backFemale: map['backFemale'],
-      backShiny: map['backShiny'],
+      backShiny: map['back_shiny'],
       backShinyFemale: map['backShinyFemale'],
-      frontDefault: map['frontDefault'],
+      frontDefault: map['front_default'],
       frontFemale: map['frontFemale'],
-      frontShiny: map['frontShiny'],
+      frontShiny: map['front_shiny'],
       frontShinyFemale: map['frontShinyFemale'],
     );
   }
@@ -319,26 +319,26 @@ class Platinum {
 
   Map<String, dynamic> toMap() {
     return {
-      'backDefault': backDefault,
+      'back_default': backDefault,
       'backFemale': backFemale,
-      'backShiny': backShiny,
+      'back_shiny': backShiny,
       'backShinyFemale': backShinyFemale,
-      'frontDefault': frontDefault,
+      'front_default': frontDefault,
       'frontFemale': frontFemale,
-      'frontShiny': frontShiny,
+      'front_shiny': frontShiny,
       'frontShinyFemale': frontShinyFemale,
     };
   }
 
   factory Platinum.fromMap(Map<String, dynamic> map) {
     return Platinum(
-      backDefault: map['backDefault'],
+      backDefault: map['back_default'],
       backFemale: map['backFemale'],
-      backShiny: map['backShiny'],
+      backShiny: map['back_shiny'],
       backShinyFemale: map['backShinyFemale'],
-      frontDefault: map['frontDefault'],
+      frontDefault: map['front_default'],
       frontFemale: map['frontFemale'],
-      frontShiny: map['frontShiny'],
+      frontShiny: map['front_shiny'],
       frontShinyFemale: map['frontShinyFemale'],
     );
   }

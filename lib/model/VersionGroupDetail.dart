@@ -35,8 +35,8 @@ class VersionGroupDetail {
   factory VersionGroupDetail.fromMap(Map<String, dynamic> map) {
     return VersionGroupDetail(
       levelLearnedAt: map['level_learned_at'],
-      moveLearnMethod: map['move_learn_method'] as NamedApiResource,
-      versionGroup: map['version_group'] as NamedApiResource,
+      moveLearnMethod: NamedApiResource.fromMap(map['move_learn_method']),
+      versionGroup: NamedApiResource.fromMap(map['version_group']),
     );
   }
 

@@ -25,16 +25,16 @@ class GenerationIII {
   Map<String, dynamic> toMap() {
     return {
       'emerald': emerald.toMap(),
-      'fireredLeafgreen': fireredLeafgreen.toMap(),
-      'rubySapphire': rubySapphire.toMap(),
+      'firered-leafgreen': fireredLeafgreen.toMap(),
+      'ruby-sapphire': rubySapphire.toMap(),
     };
   }
 
   factory GenerationIII.fromMap(Map<String, dynamic> map) {
     return GenerationIII(
       emerald: Emerald.fromMap(map['emerald']),
-      fireredLeafgreen: FireredLeafgreen.fromMap(map['fireredLeafgreen']),
-      rubySapphire: RubySapphire.fromMap(map['rubySapphire']),
+      fireredLeafgreen: FireredLeafgreen.fromMap(map['firered-leafgreen']),
+      rubySapphire: RubySapphire.fromMap(map['ruby-sapphire']),
     );
   }
 
@@ -82,15 +82,15 @@ class Emerald {
 
   Map<String, dynamic> toMap() {
     return {
-      'frontDefault': frontDefault,
-      'frontShiny': frontShiny,
+      'front_default': frontDefault,
+      'front_shiny': frontShiny,
     };
   }
 
   factory Emerald.fromMap(Map<String, dynamic> map) {
     return Emerald(
-      frontDefault: map['frontDefault'],
-      frontShiny: map['frontShiny'],
+      frontDefault: map['front_default'],
+      frontShiny: map['front_shiny'],
     );
   }
 
@@ -144,19 +144,19 @@ class FireredLeafgreen {
 
   Map<String, dynamic> toMap() {
     return {
-      'backDefault': backDefault,
-      'backShiny': backShiny,
-      'frontDefault': frontDefault,
-      'frontShiny': frontShiny,
+      'back_default': backDefault,
+      'back_shiny': backShiny,
+      'front_default': frontDefault,
+      'front_shiny': frontShiny,
     };
   }
 
   factory FireredLeafgreen.fromMap(Map<String, dynamic> map) {
     return FireredLeafgreen(
-      backDefault: map['backDefault'],
-      backShiny: map['backShiny'],
-      frontDefault: map['frontDefault'],
-      frontShiny: map['frontShiny'],
+      backDefault: map['back_default'],
+      backShiny: map['back_shiny'],
+      frontDefault: map['front_default'],
+      frontShiny: map['front_shiny'],
     );
   }
 
@@ -218,19 +218,19 @@ class RubySapphire {
 
   Map<String, dynamic> toMap() {
     return {
-      'backDefault': backDefault,
-      'backShiny': backShiny,
-      'frontDefault': frontDefault,
-      'frontShiny': frontShiny,
+      'back_default': backDefault,
+      'back_shiny': backShiny,
+      'front_default': frontDefault,
+      'front_shiny': frontShiny,
     };
   }
 
   factory RubySapphire.fromMap(Map<String, dynamic> map) {
     return RubySapphire(
-      backDefault: map['backDefault'],
-      backShiny: map['backShiny'],
-      frontDefault: map['frontDefault'],
-      frontShiny: map['frontShiny'],
+      backDefault: map['back_default'],
+      backShiny: map['back_shiny'],
+      frontDefault: map['front_default'],
+      frontShiny: map['front_shiny'],
     );
   }
 

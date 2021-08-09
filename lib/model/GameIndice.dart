@@ -30,7 +30,7 @@ class GameIndice {
   factory GameIndice.fromMap(Map<String, dynamic> map) {
     return GameIndice(
       gameIndex: map['game_index'],
-      version: map['version'],
+      version: NamedApiResource.fromMap(map['version']),
     );
   }
 

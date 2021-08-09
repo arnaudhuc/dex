@@ -82,7 +82,7 @@ class Stat {
     return Stat(
       baseStat: map['base_stat'],
       effort: map['effort'],
-      stat: map['stat'],
+      stat: NamedApiResource.fromMap(map['stat']),
     );
   }
 
@@ -136,7 +136,7 @@ class Types {
   factory Types.fromMap(Map<String, dynamic> map) {
     return Types(
       slot: map['slot'],
-      type: map['type'],
+      type: NamedApiResource.fromMap(map['type']),
     );
   }
 

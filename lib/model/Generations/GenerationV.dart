@@ -16,13 +16,13 @@ class GenerationV {
 
   Map<String, dynamic> toMap() {
     return {
-      'blackWhite': blackWhite.toMap(),
+      'black-white': blackWhite.toMap(),
     };
   }
 
   factory GenerationV.fromMap(Map<String, dynamic> map) {
     return GenerationV(
-      blackWhite: BlackWhite.fromMap(map['blackWhite']),
+      blackWhite: BlackWhite.fromMap(map['black-white']),
     );
   }
 
@@ -94,13 +94,13 @@ class BlackWhite {
   Map<String, dynamic> toMap() {
     return {
       'animated': animated.toMap(),
-      'backDefault': backDefault,
+      'back_default': backDefault,
       'backFemale': backFemale,
-      'backShiny': backShiny,
+      'back_shiny': backShiny,
       'backShinyFemale': backShinyFemale,
-      'frontDefault': frontDefault,
+      'front_default': frontDefault,
       'frontFemale': frontFemale,
-      'frontShiny': frontShiny,
+      'front_shiny': frontShiny,
       'frontShinyFemale': frontShinyFemale,
     };
   }
@@ -108,13 +108,13 @@ class BlackWhite {
   factory BlackWhite.fromMap(Map<String, dynamic> map) {
     return BlackWhite(
       animated: Animated.fromMap(map['animated']),
-      backDefault: map['backDefault'],
+      backDefault: map['back_default'],
       backFemale: map['backFemale'],
-      backShiny: map['backShiny'],
+      backShiny: map['back_shiny'],
       backShinyFemale: map['backShinyFemale'],
-      frontDefault: map['frontDefault'],
+      frontDefault: map['front_default'],
       frontFemale: map['frontFemale'],
-      frontShiny: map['frontShiny'],
+      frontShiny: map['front_shiny'],
       frontShinyFemale: map['frontShinyFemale'],
     );
   }
@@ -203,26 +203,26 @@ class Animated {
 
   Map<String, dynamic> toMap() {
     return {
-      'backDefault': backDefault,
+      'back_default': backDefault,
       'backFemale': backFemale,
-      'backShiny': backShiny,
+      'back_shiny': backShiny,
       'backShinyFemale': backShinyFemale,
-      'frontDefault': frontDefault,
+      'front_default': frontDefault,
       'frontFemale': frontFemale,
-      'frontShiny': frontShiny,
+      'front_shiny': frontShiny,
       'frontShinyFemale': frontShinyFemale,
     };
   }
 
   factory Animated.fromMap(Map<String, dynamic> map) {
     return Animated(
-      backDefault: map['backDefault'],
+      backDefault: map['back_default'],
       backFemale: map['backFemale'],
-      backShiny: map['backShiny'],
+      backShiny: map['back_shiny'],
       backShinyFemale: map['backShinyFemale'],
-      frontDefault: map['frontDefault'],
+      frontDefault: map['front_default'],
       frontFemale: map['frontFemale'],
-      frontShiny: map['frontShiny'],
+      frontShiny: map['front_shiny'],
       frontShinyFemale: map['frontShinyFemale'],
     );
   }

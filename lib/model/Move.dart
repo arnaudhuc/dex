@@ -34,7 +34,7 @@ class Move {
 
   factory Move.fromMap(Map<String, dynamic> map) {
     return Move(
-      move: map['move'],
+      move: NamedApiResource.fromMap(map['move']),
       versionGroupDetails: List<VersionGroupDetail>.from(
           map['version_group_details']
               ?.map((x) => VersionGroupDetail.fromMap(x))),

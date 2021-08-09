@@ -89,19 +89,19 @@ class Crystal {
 
   Map<String, dynamic> toMap() {
     return {
-      'backDefault': backDefault,
-      'backShiny': backShiny,
-      'frontDefault': frontDefault,
-      'frontShiny': frontShiny,
+      'back_default': backDefault,
+      'back_shiny': backShiny,
+      'front_default': frontDefault,
+      'front_shiny': frontShiny,
     };
   }
 
   factory Crystal.fromMap(Map<String, dynamic> map) {
     return Crystal(
-      backDefault: map['backDefault'],
-      backShiny: map['backShiny'],
-      frontDefault: map['frontDefault'],
-      frontShiny: map['frontShiny'],
+      backDefault: map['back_default'],
+      backShiny: map['back_shiny'],
+      frontDefault: map['front_default'],
+      frontShiny: map['front_shiny'],
     );
   }
 
@@ -163,19 +163,19 @@ class Gold {
 
   Map<String, dynamic> toMap() {
     return {
-      'backDefault': backDefault,
-      'backShiny': backShiny,
-      'frontDefault': frontDefault,
-      'frontShiny': frontShiny,
+      'back_default': backDefault,
+      'back_shiny': backShiny,
+      'front_default': frontDefault,
+      'front_shiny': frontShiny,
     };
   }
 
   factory Gold.fromMap(Map<String, dynamic> map) {
     return Gold(
-      backDefault: map['backDefault'],
-      backShiny: map['backShiny'],
-      frontDefault: map['frontDefault'],
-      frontShiny: map['frontShiny'],
+      backDefault: map['back_default'],
+      backShiny: map['back_shiny'],
+      frontDefault: map['front_default'],
+      frontShiny: map['front_shiny'],
     );
   }
 
@@ -236,19 +236,19 @@ class Silver {
 
   Map<String, dynamic> toMap() {
     return {
-      'backDefault': backDefault,
-      'backShiny': backShiny,
-      'frontDefault': frontDefault,
-      'frontShiny': frontShiny,
+      'back_default': backDefault,
+      'back_shiny': backShiny,
+      'front_default': frontDefault,
+      'front_shiny': frontShiny,
     };
   }
 
   factory Silver.fromMap(Map<String, dynamic> map) {
     return Silver(
-      backDefault: map['backDefault'],
-      backShiny: map['backShiny'],
-      frontDefault: map['frontDefault'],
-      frontShiny: map['frontShiny'],
+      backDefault: map['back_default'],
+      backShiny: map['back_shiny'],
+      frontDefault: map['front_default'],
+      frontShiny: map['front_shiny'],
     );
   }
 

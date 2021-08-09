@@ -21,16 +21,16 @@ class GenerationVI {
 
   Map<String, dynamic> toMap() {
     return {
-      'omegarubyAlphasapphire': omegarubyAlphasapphire.toMap(),
-      'xY': xY.toMap(),
+      'omegaruby-alphasapphire': omegarubyAlphasapphire.toMap(),
+      'x-y': xY.toMap(),
     };
   }
 
   factory GenerationVI.fromMap(Map<String, dynamic> map) {
     return GenerationVI(
       omegarubyAlphasapphire:
-          OmegaRubyAlphaSapphire.fromMap(map['omegarubyAlphasapphire']),
-      xY: XY.fromMap(map['xY']),
+          OmegaRubyAlphaSapphire.fromMap(map['omegaruby-alphasapphire']),
+      xY: XY.fromMap(map['x-y']),
     );
   }
 
@@ -84,18 +84,18 @@ class OmegaRubyAlphaSapphire {
 
   Map<String, dynamic> toMap() {
     return {
-      'frontDefault': frontDefault,
+      'front_default': frontDefault,
       'frontFemale': frontFemale,
-      'frontShiny': frontShiny,
+      'front_shiny': frontShiny,
       'frontShinyFemale': frontShinyFemale,
     };
   }
 
   factory OmegaRubyAlphaSapphire.fromMap(Map<String, dynamic> map) {
     return OmegaRubyAlphaSapphire(
-      frontDefault: map['frontDefault'],
+      frontDefault: map['front_default'],
       frontFemale: map['frontFemale'],
-      frontShiny: map['frontShiny'],
+      frontShiny: map['front_shiny'],
       frontShinyFemale: map['frontShinyFemale'],
     );
   }
@@ -158,18 +158,18 @@ class XY {
 
   Map<String, dynamic> toMap() {
     return {
-      'frontDefault': frontDefault,
+      'front_default': frontDefault,
       'frontFemale': frontFemale,
-      'frontShiny': frontShiny,
+      'front_shiny': frontShiny,
       'frontShinyFemale': frontShinyFemale,
     };
   }
 
   factory XY.fromMap(Map<String, dynamic> map) {
     return XY(
-      frontDefault: map['frontDefault'],
+      frontDefault: map['front_default'],
       frontFemale: map['frontFemale'],
-      frontShiny: map['frontShiny'],
+      frontShiny: map['front_shiny'],
       frontShinyFemale: map['frontShinyFemale'],
     );
   }
