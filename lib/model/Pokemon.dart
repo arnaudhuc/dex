@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:collection/collection.dart';
+import 'package:dex/model/Types.dart';
 
 import 'Abilities.dart';
 import 'GameIndice.dart';
@@ -8,6 +9,7 @@ import 'Generations/GenerationVIII.dart';
 import 'Move.dart';
 import 'NamedApiResource.dart';
 import 'Sprites.dart';
+import 'Stat.dart';
 
 class Pokemon {
   final List<Abilities> abilities;

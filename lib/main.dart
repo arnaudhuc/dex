@@ -1,4 +1,4 @@
-import 'package:dex/screens/Home.dart';
+import 'package:dex/screens/HomePage.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.red,
       ),
       debugShowCheckedModeBanner: false,
-      home: Home(title: 'Pokedex Flutter'),
+      home: HomePage(title: 'Pokedex Flutter'),
     );
   }
 }

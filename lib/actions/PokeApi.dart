@@ -1,5 +1,6 @@
 import 'package:dex/model/Pokemon.dart';
 import 'package:dex/model/PokemonRootModel.dart';
+import 'package:dex/model/Species.dart';
 import 'package:http/http.dart' as http;
 
 class PokeApi {
@@ -19,6 +20,17 @@ class PokeApi {
         await http.get(url, headers: {'Accept': 'application/json'});
     if (response.statusCode == 200) {
       return Pokemon.fromJson(response.body);
+    } else {
+      throw Exception('Failed to load pokemon');
+    }
+  }
+
+  Future<Species> getSpecies(String speciesUrl) async {
+    var url = Uri.parse(speciesUrl);
+    final response =
+        await http.get(url, headers: {'Accept': 'application/json'});
+    if (response.statusCode == 200) {
+      return Species.fromJson(response.body);
     } else {
       throw Exception('Failed to load pokemon');
     }
