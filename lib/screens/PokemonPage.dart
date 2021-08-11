@@ -1,5 +1,4 @@
 import 'package:dex/actions/PokeApi.dart';
-import 'package:dex/components/PokemonBaseInfo.dart';
 import 'package:dex/model/Pokemon.dart';
 import 'package:dex/model/Species.dart';
 import 'package:flutter/material.dart';
@@ -28,7 +27,7 @@ class _PokemonPageState extends State<PokemonPage> {
             if (snapshot.hasData) {
               return SingleChildScrollView(
                 child: Center(
-                  child: Text(snapshot.data!.flavorTextEntries[0].flavor_text),
+                  child: Text(snapshot.data!.flavorTextEntries[0].flavorText),
                 ),
               );
             } else if (snapshot.hasError) {

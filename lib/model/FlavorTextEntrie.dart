@@ -3,22 +3,22 @@ import 'dart:convert';
 import 'package:dex/model/NamedApiResource.dart';
 
 class FlavorTextEntrie {
-  final String flavor_text;
+  final String flavorText;
   final NamedApiResource language;
   final NamedApiResource version;
   FlavorTextEntrie({
-    required this.flavor_text,
+    required this.flavorText,
     required this.language,
     required this.version,
   });
 
   FlavorTextEntrie copyWith({
-    String? flavor_text,
+    String? flavorText,
     NamedApiResource? language,
     NamedApiResource? version,
   }) {
     return FlavorTextEntrie(
-      flavor_text: flavor_text ?? this.flavor_text,
+      flavorText: flavorText ?? this.flavorText,
       language: language ?? this.language,
       version: version ?? this.version,
     );
@@ -26,7 +26,7 @@ class FlavorTextEntrie {
 
   Map<String, dynamic> toMap() {
     return {
-      'flavor_text': flavor_text,
+      'flavor_text': flavorText,
       'language': language.toMap(),
       'version': version.toMap(),
     };
@@ -34,7 +34,7 @@ class FlavorTextEntrie {
 
   factory FlavorTextEntrie.fromMap(Map<String, dynamic> map) {
     return FlavorTextEntrie(
-      flavor_text: map['flavor_text'],
+      flavorText: map['flavor_text'],
       language: NamedApiResource.fromMap(map['language']),
       version: NamedApiResource.fromMap(map['version']),
     );
@@ -47,19 +47,19 @@ class FlavorTextEntrie {
 
   @override
   String toString() =>
-      'Flavor_text_entrie(flavor_text: $flavor_text, language: $language, version: $version)';
+      'Flavor_text_entrie(flavor_text: $flavorText, language: $language, version: $version)';
 
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) return true;
 
     return other is FlavorTextEntrie &&
-        other.flavor_text == flavor_text &&
+        other.flavorText == flavorText &&
         other.language == language &&
         other.version == version;
   }
 
   @override
   int get hashCode =>
-      flavor_text.hashCode ^ language.hashCode ^ version.hashCode;
+      flavorText.hashCode ^ language.hashCode ^ version.hashCode;
 }

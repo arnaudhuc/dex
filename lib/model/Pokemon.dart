@@ -5,7 +5,6 @@ import 'package:dex/model/Types.dart';
 
 import 'Abilities.dart';
 import 'GameIndice.dart';
-import 'Generations/GenerationVIII.dart';
 import 'Move.dart';
 import 'NamedApiResource.dart';
 import 'Sprites.dart';

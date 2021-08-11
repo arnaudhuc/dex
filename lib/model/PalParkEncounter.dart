@@ -4,22 +4,22 @@ import 'package:dex/model/NamedApiResource.dart';
 
 class PalParkEncounter {
   final NamedApiResource area;
-  final int base_score;
+  final int baseScore;
   final int rate;
   PalParkEncounter({
     required this.area,
-    required this.base_score,
+    required this.baseScore,
     required this.rate,
   });
 
   PalParkEncounter copyWith({
     NamedApiResource? area,
-    int? base_score,
+    int? baseScore,
     int? rate,
   }) {
     return PalParkEncounter(
       area: area ?? this.area,
-      base_score: base_score ?? this.base_score,
+      baseScore: baseScore ?? this.baseScore,
       rate: rate ?? this.rate,
     );
   }
@@ -27,7 +27,7 @@ class PalParkEncounter {
   Map<String, dynamic> toMap() {
     return {
       'area': area.toMap(),
-      'base_score': base_score,
+      'base_score': baseScore,
       'rate': rate,
     };
   }
@@ -35,7 +35,7 @@ class PalParkEncounter {
   factory PalParkEncounter.fromMap(Map<String, dynamic> map) {
     return PalParkEncounter(
       area: NamedApiResource.fromMap(map['area']),
-      base_score: map['base_score'],
+      baseScore: map['base_score'],
       rate: map['rate'],
     );
   }
@@ -47,7 +47,7 @@ class PalParkEncounter {
 
   @override
   String toString() =>
-      'Pal_park_encounter(area: $area, base_score: $base_score, rate: $rate)';
+      'Pal_park_encounter(area: $area, base_score: $baseScore, rate: $rate)';
 
   @override
   bool operator ==(Object other) {
@@ -55,10 +55,10 @@ class PalParkEncounter {
 
     return other is PalParkEncounter &&
         other.area == area &&
-        other.base_score == base_score &&
+        other.baseScore == baseScore &&
         other.rate == rate;
   }
 
   @override
-  int get hashCode => area.hashCode ^ base_score.hashCode ^ rate.hashCode;
+  int get hashCode => area.hashCode ^ baseScore.hashCode ^ rate.hashCode;
 }
