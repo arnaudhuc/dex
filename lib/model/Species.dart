@@ -1,15 +1,15 @@
 import 'dart:convert';
 
+import 'package:flutter/foundation.dart';
+
 import 'package:dex/model/EvolutionChain.dart';
 import 'package:dex/model/FlavorTextEntrie.dart';
 import 'package:dex/model/Genera.dart';
 import 'package:dex/model/Name.dart';
+import 'package:dex/model/NamedApiResource.dart';
 import 'package:dex/model/PalParkEncounter.dart';
 import 'package:dex/model/PokedexNumber.dart';
 import 'package:dex/model/Variete.dart';
-import 'package:flutter/foundation.dart';
-
-import 'package:dex/model/NamedApiResource.dart';
 
 class Species {
   final int baseHappiness;
@@ -17,7 +17,6 @@ class Species {
   final NamedApiResource color;
   final List<NamedApiResource> eggGroups;
   final EvolutionChain evolutionChain;
-  final NamedApiResource evolvesFromSpecies;
   final List<FlavorTextEntrie> flavorTextEntries;
   final List<dynamic> formDescriptions;
   final bool formsSwitchable;
@@ -45,7 +44,6 @@ class Species {
     required this.color,
     required this.eggGroups,
     required this.evolutionChain,
-    required this.evolvesFromSpecies,
     required this.flavorTextEntries,
     required this.formDescriptions,
     required this.formsSwitchable,
@@ -104,7 +102,6 @@ class Species {
       color: color ?? this.color,
       eggGroups: eggGroups ?? this.eggGroups,
       evolutionChain: evolutionChain ?? this.evolutionChain,
-      evolvesFromSpecies: evolvesFromSpecies ?? this.evolvesFromSpecies,
       flavorTextEntries: flavorTextEntries ?? this.flavorTextEntries,
       formDescriptions: formDescriptions ?? this.formDescriptions,
       formsSwitchable: formsSwitchable ?? this.formsSwitchable,
@@ -137,7 +134,6 @@ class Species {
       eggGroups: List<NamedApiResource>.from(
           map['egg_groups']?.map((x) => NamedApiResource.fromMap(x))),
       evolutionChain: EvolutionChain.fromMap(map['evolution_chain']),
-      evolvesFromSpecies: NamedApiResource.fromMap(map['evolves_from_species']),
       flavorTextEntries: List<FlavorTextEntrie>.from(
           map['flavor_text_entries']?.map((x) => FlavorTextEntrie.fromMap(x))),
       formDescriptions: List<dynamic>.from(map['form_descriptions']),
@@ -171,7 +167,7 @@ class Species {
 
   @override
   String toString() {
-    return 'Species(base_happiness: $baseHappiness, capture_rate: $captureRate, color: $color, egg_groups: $eggGroups, evolution_chain: $evolutionChain, evolves_from_species: $evolvesFromSpecies, flavor_text_entries: $flavorTextEntries, form_descriptions: $formDescriptions, forms_switchable: $formsSwitchable, gender_rate: $genderRate, genera: $genera, generation: $generation, growth_rate: $growthRate, habitat: $habitat, has_gender_differences: $hasGenderDifferences, hatch_counter: $hatchCounter, id: $id, is_baby: $isBaby, is_legendary: $isLegendary, is_mythical: $isMythical, name: $name, names: $names, order: $order, pal_park_encounters: $palParkEncounters, pokedex_numbers: $pokedexNumbers, shape: $shape, varieties: $varieties)';
+    return 'Species(baseHappiness: $baseHappiness, captureRate: $captureRate, color: $color, eggGroups: $eggGroups, evolutionChain: $evolutionChain, flavorTextEntries: $flavorTextEntries, formDescriptions: $formDescriptions, formsSwitchable: $formsSwitchable, genderRate: $genderRate, genera: $genera, generation: $generation, growthRate: $growthRate, habitat: $habitat, hasGenderDifferences: $hasGenderDifferences, hatchCounter: $hatchCounter, id: $id, isBaby: $isBaby, isLegendary: $isLegendary, isMythical: $isMythical, name: $name, names: $names, order: $order, palParkEncounters: $palParkEncounters, pokedexNumbers: $pokedexNumbers, shape: $shape, varieties: $varieties)';
   }
 
   @override
@@ -184,7 +180,6 @@ class Species {
         other.color == color &&
         listEquals(other.eggGroups, eggGroups) &&
         other.evolutionChain == evolutionChain &&
-        other.evolvesFromSpecies == evolvesFromSpecies &&
         listEquals(other.flavorTextEntries, flavorTextEntries) &&
         listEquals(other.formDescriptions, formDescriptions) &&
         other.formsSwitchable == formsSwitchable &&
@@ -215,7 +210,6 @@ class Species {
         color.hashCode ^
         eggGroups.hashCode ^
         evolutionChain.hashCode ^
-        evolvesFromSpecies.hashCode ^
         flavorTextEntries.hashCode ^
         formDescriptions.hashCode ^
         formsSwitchable.hashCode ^
