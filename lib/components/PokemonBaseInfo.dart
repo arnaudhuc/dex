@@ -13,20 +13,28 @@ class PokemonBaseInfo extends StatefulWidget {
 class _PokemonBaseInfoState extends State<PokemonBaseInfo> {
   @override
   Widget build(BuildContext context) {
-    return Wrap(
-      alignment: WrapAlignment.spaceBetween,
-      direction: Axis.horizontal,
-      children: [
-        Text('Base stats', style: TextStyle(fontWeight: FontWeight.bold)),
-        ...widget.stats
-            .map((stat) => Column(
-                  children: [
-                    Text(stat.stat.name, style: TextStyle(color: Colors.red)),
-                    Text(stat.baseStat.toString()),
-                  ],
-                ))
-            .toList()
-      ],
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Column(
+        children: [
+          Text('Base stats', style: TextStyle(fontWeight: FontWeight.bold)),
+          Wrap(
+            spacing: 10,
+            direction: Axis.horizontal,
+            children: [
+              ...widget.stats
+                  .map((stat) => Column(
+                        children: [
+                          Text(stat.stat.name,
+                              style: TextStyle(color: Colors.red)),
+                          Text(stat.baseStat.toString()),
+                        ],
+                      ))
+                  .toList()
+            ],
+          )
+        ],
+      ),
     );
   }
 }

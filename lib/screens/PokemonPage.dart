@@ -1,7 +1,10 @@
 import 'package:dex/actions/PokeApi.dart';
+import 'package:dex/components/PokemonAbilities.dart';
 import 'package:dex/components/PokemonBaseInfo.dart';
+import 'package:dex/components/PokemonOtherInfo.dart';
 import 'package:dex/model/Pokemon.dart';
 import 'package:dex/model/Species.dart';
+import 'package:dex/utils/GetColor.dart';
 import 'package:flutter/material.dart';
 
 class PokemonPage extends StatefulWidget {
@@ -31,7 +34,13 @@ class _PokemonPageState extends State<PokemonPage> {
               });
               return SingleChildScrollView(
                 child: Container(
-                  decoration: const BoxDecoration(color: Colors.white),
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      colors: getColor(widget.pokemon.types),
+                      begin: FractionalOffset.topCenter,
+                      end: FractionalOffset.bottomCenter,
+                    ),
+                  ),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -51,15 +60,11 @@ class _PokemonPageState extends State<PokemonPage> {
                         ],
                       ),
                       PokemonBaseInfo(stats: widget.pokemon.stats),
-                      Text('Abilities'),
-                      ...widget.pokemon.abilities.map((ability) {
-                        return Text(ability.ability.name);
-                      }),
-                      Text(
-                          'Height : ${(widget.pokemon.height / 10).toString()} m'),
-                      Text(
-                          'Weight : ${(widget.pokemon.weight / 10).toString()} kg'),
-                      Text(genera.genus),
+                      PokemonAbilities(abilities: widget.pokemon.abilities),
+                      PokemonOtherInfo(
+                          genus: genera.genus,
+                          height: widget.pokemon.height,
+                          weight: widget.pokemon.weight),
                     ],
                   ),
                 ),
