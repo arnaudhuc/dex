@@ -5,7 +5,8 @@ import 'package:http/http.dart' as http;
 
 class PokeApi {
   Future<PokeAPIRootTypes> getAll() async {
-    var url = Uri.parse('https://pokeapi.co/api/v2/pokemon?limit=151');
+    var url =
+        Uri.parse('https://pokeapi.co/api/v2/pokemon?limit=100&offset=151');
     final response = await http.get(url);
     if (response.statusCode == 200) {
       return PokeAPIRootTypes.fromJson(response.body);

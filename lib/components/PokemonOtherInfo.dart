@@ -30,7 +30,7 @@ class _PokemonOtherInfoState extends State<PokemonOtherInfo> {
             children: [
               Text('Genus: ${widget.genus}'),
               Text('Height: ${(widget.height / 10).toString()} m'),
-              Text('Weight: ${(widget.weight / 10).toString()} kg}'),
+              Text('Weight: ${(widget.weight / 10).toString()} kg'),
             ],
           )
         ],

@@ -108,14 +108,16 @@ class BlackWhite {
   factory BlackWhite.fromMap(Map<String, dynamic> map) {
     return BlackWhite(
       animated: Animated.fromMap(map['animated']),
-      backDefault: map['back_default'],
-      backFemale: map['backFemale'],
-      backShiny: map['back_shiny'],
-      backShinyFemale: map['backShinyFemale'],
-      frontDefault: map['front_default'],
-      frontFemale: map['frontFemale'],
-      frontShiny: map['front_shiny'],
-      frontShinyFemale: map['frontShinyFemale'],
+      backDefault: map['back_default'] != null ? map['back_default'] : "",
+      backFemale: map['backFemale'] != null ? map['backFemale'] : "",
+      backShiny: map['back_shiny'] != null ? map['back_shiny'] : "",
+      backShinyFemale:
+          map['backShinyFemale'] != null ? map['backShinyFemale'] : "",
+      frontDefault: map['front_default'] != null ? map['front_default'] : "",
+      frontFemale: map['frontFemale'] != null ? map['frontFemale'] : "",
+      frontShiny: map['front_shiny'] != null ? map['front_shiny'] : "",
+      frontShinyFemale:
+          map['frontShinyFemale'] != null ? map['frontShinyFemale'] : "",
     );
   }
 
@@ -216,14 +218,16 @@ class Animated {
 
   factory Animated.fromMap(Map<String, dynamic> map) {
     return Animated(
-      backDefault: map['back_default'],
-      backFemale: map['backFemale'],
-      backShiny: map['back_shiny'],
-      backShinyFemale: map['backShinyFemale'],
-      frontDefault: map['front_default'],
-      frontFemale: map['frontFemale'],
-      frontShiny: map['front_shiny'],
-      frontShinyFemale: map['frontShinyFemale'],
+      backDefault: map['back_default'] != null ? map['back_default'] : "",
+      backFemale: map['backFemale'] != null ? map['backFemale'] : "",
+      backShiny: map['back_shiny'] != null ? map['back_shiny'] : "",
+      backShinyFemale:
+          map['backShinyFemale'] != null ? map['backShinyFemale'] : "",
+      frontDefault: map['front_default'] != null ? map['front_default'] : "",
+      frontFemale: map['frontFemale'] != null ? map['frontFemale'] : "",
+      frontShiny: map['front_shiny'] != null ? map['front_shiny'] : "",
+      frontShinyFemale:
+          map['frontShinyFemale'] != null ? map['frontShinyFemale'] : "",
     );
   }
 

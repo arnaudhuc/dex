@@ -93,10 +93,11 @@ class OmegaRubyAlphaSapphire {
 
   factory OmegaRubyAlphaSapphire.fromMap(Map<String, dynamic> map) {
     return OmegaRubyAlphaSapphire(
-      frontDefault: map['front_default'],
-      frontFemale: map['frontFemale'],
-      frontShiny: map['front_shiny'],
-      frontShinyFemale: map['frontShinyFemale'],
+      frontDefault: map['front_default'] != null ? map['front_default'] : '',
+      frontFemale: map['frontFemale'] != null ? map['frontFemale'] : '',
+      frontShiny: map['front_shiny'] != null ? map['front_shiny'] : '',
+      frontShinyFemale:
+          map['frontShinyFemale'] != null ? map['frontShinyFemale'] : '',
     );
   }
 
@@ -167,10 +168,11 @@ class XY {
 
   factory XY.fromMap(Map<String, dynamic> map) {
     return XY(
-      frontDefault: map['front_default'],
-      frontFemale: map['frontFemale'],
-      frontShiny: map['front_shiny'],
-      frontShinyFemale: map['frontShinyFemale'],
+      frontDefault: map['front_default'] != null ? map['front_default'] : '',
+      frontFemale: map['frontFemale'] != null ? map['frontFemale'] : '',
+      frontShiny: map['front_shiny'] != null ? map['front_shiny'] : '',
+      frontShinyFemale:
+          map['frontShinyFemale'] != null ? map['frontShinyFemale'] : '',
     );
   }
 

@@ -81,8 +81,8 @@ class Icons {
 
   factory Icons.fromMap(Map<String, dynamic> map) {
     return Icons(
-      frontDefault: map['front_default'],
-      frontFemale: map['frontFemale'],
+      frontDefault: map['front_default'] != null ? map['front_default'] : '',
+      frontFemale: map['frontFemale'] != null ? map['frontFemale'] : '',
     );
   }
 
@@ -144,10 +144,11 @@ class UltraSunUltraMoon {
 
   factory UltraSunUltraMoon.fromMap(Map<String, dynamic> map) {
     return UltraSunUltraMoon(
-      frontDefault: map['front_default'],
-      frontFemale: map['frontFemale'],
-      frontShiny: map['front_shiny'],
-      frontShinyFemale: map['frontShinyFemale'],
+      frontDefault: map['front_default'] != null ? map['front_default'] : '',
+      frontFemale: map['frontFemale'] != null ? map['frontFemale'] : '',
+      frontShiny: map['front_shiny'] != null ? map['front_shiny'] : '',
+      frontShinyFemale:
+          map['frontShinyFemale'] != null ? map['frontShinyFemale'] : '',
     );
   }
 

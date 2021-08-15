@@ -90,10 +90,10 @@ class RedBlue {
 
   factory RedBlue.fromMap(Map<String, dynamic> map) {
     return RedBlue(
-      backDefault: map['back_default'],
-      backGray: map['back_gray'],
-      frontDefault: map['front_default'],
-      frontGray: map['front_gray'],
+      backDefault: map['back_default'] != null ? map['back_default'] : '',
+      backGray: map['back_default'] != null ? map['back_default'] : '',
+      frontDefault: map['back_default'] != null ? map['back_default'] : '',
+      frontGray: map['back_default'] != null ? map['back_default'] : '',
     );
   }
 
@@ -164,10 +164,10 @@ class Yellow {
 
   factory Yellow.fromMap(Map<String, dynamic> map) {
     return Yellow(
-      backDefault: map['back_default'],
-      backGray: map['back_gray'],
-      frontDefault: map['front_default'],
-      frontGray: map['front_gray'],
+      backDefault: map['back_default'] != null ? map['back_default'] : '',
+      backGray: map['back_default'] != null ? map['back_default'] : '',
+      frontDefault: map['back_default'] != null ? map['back_default'] : '',
+      frontGray: map['back_default'] != null ? map['back_default'] : '',
     );
   }
 

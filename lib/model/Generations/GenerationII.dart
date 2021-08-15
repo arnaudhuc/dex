@@ -98,10 +98,10 @@ class Crystal {
 
   factory Crystal.fromMap(Map<String, dynamic> map) {
     return Crystal(
-      backDefault: map['back_default'],
-      backShiny: map['back_shiny'],
-      frontDefault: map['front_default'],
-      frontShiny: map['front_shiny'],
+      backDefault: map['back_default'] != null ? map['back_default'] : '',
+      backShiny: map['back_shiny'] != null ? map['back_shiny'] : '',
+      frontDefault: map['front_default'] != null ? map['front_default'] : '',
+      frontShiny: map['front_shiny'] != null ? map['front_shiny'] : '',
     );
   }
 
