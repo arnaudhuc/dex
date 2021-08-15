@@ -89,8 +89,8 @@ class Emerald {
 
   factory Emerald.fromMap(Map<String, dynamic> map) {
     return Emerald(
-      frontDefault: map['front_default'],
-      frontShiny: map['front_shiny'],
+      frontDefault: map['front_default'] != null ? map['front_default'] : '',
+      frontShiny: map['front_shiny'] != null ? map['front_shiny'] : '',
     );
   }
 

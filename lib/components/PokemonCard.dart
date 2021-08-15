@@ -57,6 +57,8 @@ class _PokemonCardState extends State<PokemonCard> {
                     end: FractionalOffset.bottomCenter,
                   ),
                 ),
+                width: 112,
+                height: 160,
               ),
               onTap: () {
                 Navigator.push(

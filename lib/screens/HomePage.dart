@@ -1,4 +1,5 @@
 import 'package:dex/actions/PokeApi.dart';
+import 'package:dex/components/FilterGeneration.dart';
 import 'package:dex/components/FilterPokemonName.dart';
 import 'package:dex/components/PokemonCard.dart';
 import 'package:dex/model/NamedApiResource.dart';
@@ -15,15 +16,14 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  final pokeApi = new PokeApi();
-
   List<String> _pokemonName = [];
   List<NamedApiResource> _pokemons = [];
   List<NamedApiResource> _results = [];
+  String _defaultGeneration = 'Kanto (1-151)';
 
   @override
   Widget build(BuildContext context) {
-    Future<PokeAPIRootTypes> getAll = pokeApi.getAll();
+    Future<PokeAPIRootTypes> getAll = new PokeApi().getAll(_defaultGeneration);
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
@@ -39,6 +39,15 @@ class _HomePageState extends State<HomePage> {
               child: Center(
                 child: Column(
                   children: [
+                    FilterGeneration(
+                      defaultGeneration: _defaultGeneration,
+                      onSelectGeneration: (generation) => {
+                        setState(() {
+                          _defaultGeneration = generation;
+                        }),
+                        print(generation),
+                      },
+                    ),
                     FilterPokemonName(
                       pokemonName: _pokemonName,
                       onPokemonSelected: (selectedPokemon) => {

@@ -142,7 +142,9 @@ class Species {
       genera: List<Genera>.from(map['genera']?.map((x) => Genera.fromMap(x))),
       generation: NamedApiResource.fromMap(map['generation']),
       growthRate: NamedApiResource.fromMap(map['growth_rate']),
-      habitat: NamedApiResource.fromMap(map['habitat']),
+      habitat: map['habitat'] != null
+          ? NamedApiResource.fromMap(map['habitat'])
+          : NamedApiResource.fromMap({'name': 'Unknow', 'url': '#'}),
       hasGenderDifferences: map['has_gender_differences'],
       hatchCounter: map['hatch_counter'],
       id: map['id'],

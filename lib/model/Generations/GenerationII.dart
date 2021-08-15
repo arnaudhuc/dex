@@ -172,10 +172,10 @@ class Gold {
 
   factory Gold.fromMap(Map<String, dynamic> map) {
     return Gold(
-      backDefault: map['back_default'],
-      backShiny: map['back_shiny'],
-      frontDefault: map['front_default'],
-      frontShiny: map['front_shiny'],
+      backDefault: map['back_default'] != null ? map['back_default'] : '',
+      backShiny: map['back_shiny'] != null ? map['back_shiny'] : '',
+      frontDefault: map['front_default'] != null ? map['front_default'] : '',
+      frontShiny: map['front_shiny'] != null ? map['front_shiny'] : '',
     );
   }
 
@@ -245,10 +245,10 @@ class Silver {
 
   factory Silver.fromMap(Map<String, dynamic> map) {
     return Silver(
-      backDefault: map['back_default'],
-      backShiny: map['back_shiny'],
-      frontDefault: map['front_default'],
-      frontShiny: map['front_shiny'],
+      backDefault: map['back_default'] != null ? map['back_default'] : '',
+      backShiny: map['back_shiny'] != null ? map['back_shiny'] : '',
+      frontDefault: map['front_default'] != null ? map['front_default'] : '',
+      frontShiny: map['front_shiny'] != null ? map['front_shiny'] : '',
     );
   }
 

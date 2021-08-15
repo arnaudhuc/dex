@@ -30,7 +30,7 @@ class _PokemonPageState extends State<PokemonPage> {
           builder: (context, snapshot) {
             if (snapshot.hasData) {
               final genera = snapshot.data!.genera.firstWhere((gen) {
-                return gen.language.name == 'en';
+                return gen.language.name.startsWith('en');
               });
               return SingleChildScrollView(
                 child: Container(

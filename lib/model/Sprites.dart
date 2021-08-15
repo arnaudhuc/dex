@@ -69,14 +69,16 @@ class Sprites {
 
   factory Sprites.fromMap(Map<String, dynamic> map) {
     return Sprites(
-      backDefault: map['back_default'],
-      backFemale: map['back_female'],
-      backShiny: map['back_shiny'],
-      backShinyFemale: map['back_shiny_female'],
-      frontDefault: map['front_default'],
-      frontFemale: map['front_female'],
-      frontShiny: map['front_shiny'],
-      frontShinyFemale: map['front_shiny_female'],
+      backDefault: map['back_default'] != null ? map['back_default'] : '',
+      backFemale: map['back_female'] != null ? map['back_female'] : '',
+      backShiny: map['back_shiny'] != null ? map['back_shiny'] : '',
+      backShinyFemale:
+          map['back_shiny_female'] != null ? map['back_shiny_female'] : '',
+      frontDefault: map['front_default'] != null ? map['front_default'] : '',
+      frontFemale: map['front_female'] != null ? map['front_female'] : '',
+      frontShiny: map['front_shiny'] != null ? map['front_shiny'] : '',
+      frontShinyFemale:
+          map['front_shiny_female'] != null ? map['front_shiny_female'] : '',
       other: Other.fromMap(map['other']),
       versions: Versions.fromMap(map['versions']),
     );
@@ -197,8 +199,8 @@ class DreamWorld {
 
   factory DreamWorld.fromMap(Map<String, dynamic> map) {
     return DreamWorld(
-      frontDefault: map['front_default'],
-      frontFemale: map['front_female'],
+      frontDefault: map['front_default'] != null ? map['front_default'] : '',
+      frontFemale: map['front_female'] != null ? map['front_female'] : '',
     );
   }
 
@@ -246,7 +248,7 @@ class OfficialArtwork {
 
   factory OfficialArtwork.fromMap(Map<String, dynamic> map) {
     return OfficialArtwork(
-      frontDefault: map['front_default'],
+      frontDefault: map['front_default'] != null ? map['front_default'] : '',
     );
   }
 
