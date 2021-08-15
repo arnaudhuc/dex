@@ -1,7 +1,6 @@
 import 'package:dex/actions/PokeApi.dart';
 import 'package:dex/model/NamedApiResource.dart';
 import 'package:dex/model/Pokemon.dart';
-import 'package:dex/model/Types.dart';
 import 'package:dex/screens/PokemonPage.dart';
 import 'package:dex/utils/GetColor.dart';
 import 'package:flutter/material.dart';

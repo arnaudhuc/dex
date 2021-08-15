@@ -1,4 +1,3 @@
-import 'package:dex/model/NamedApiResource.dart';
 import 'package:flutter/material.dart';
 
 class FilterGeneration extends StatefulWidget {
@@ -23,7 +22,6 @@ class _FilterGenerationState extends State<FilterGeneration> {
     setState(() {
       dropdownValue = widget.defaultGeneration;
     });
-    print('dropdownOnInit : ${dropdownValue}');
     List<String> generationUrl = [
       'Kanto (1-151)',
       'Johto (152-251)',
