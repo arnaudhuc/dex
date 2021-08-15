@@ -45,7 +45,6 @@ class _HomePageState extends State<HomePage> {
                         setState(() {
                           _defaultGeneration = generation;
                         }),
-                        print(generation),
                       },
                     ),
                     FilterPokemonName(
@@ -53,7 +52,6 @@ class _HomePageState extends State<HomePage> {
                       onPokemonSelected: (selectedPokemon) => {
                         if (selectedPokemon != '')
                           {
-                            print(_results),
                             setState(
                               () => _pokemons = _results
                                   .where(
