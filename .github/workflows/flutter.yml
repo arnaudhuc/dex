@@ -23,6 +23,8 @@ jobs:
       # https://github.com/dart-lang/setup-dart/blob/main/README.md
       # - uses: dart-lang/setup-dart@v1
 
+      - uses: geowatson/flutter-latest@1.0.0
+
       - name: Install dependencies
         uses: geowatson/flutter-latest@1.0.0
         with:
