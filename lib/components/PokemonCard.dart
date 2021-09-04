@@ -1,6 +1,7 @@
 import 'package:dex/actions/PokeApi.dart';
 import 'package:dex/model/NamedApiResource.dart';
 import 'package:dex/model/Pokemon.dart';
+import 'package:dex/model/Types.dart';
 import 'package:dex/screens/PokemonPage.dart';
 import 'package:dex/utils/GetColor.dart';
 import 'package:flutter/material.dart';
@@ -34,7 +35,10 @@ class _PokemonCardState extends State<PokemonCard> {
                   child: Column(
                     children: [
                       // Add GestureDetector
-                      Text('#${snapshot.data!.id}'),
+                      Text(
+                        '#${snapshot.data!.id}',
+                        style: _getCardTextColor(snapshot),
+                      ),
                       // Text('Ici mon image 2'),
                       Image(
                         image:
@@ -42,7 +46,10 @@ class _PokemonCardState extends State<PokemonCard> {
                         width: 96,
                         height: 96,
                       ),
-                      Text(snapshot.data!.name),
+                      Text(
+                        snapshot.data!.name,
+                        style: _getCardTextColor(snapshot),
+                      ),
                       // Text(widget.pokemon.name),
                       // Text("ici les types"),
                     ],
@@ -86,5 +93,16 @@ class _PokemonCardState extends State<PokemonCard> {
         );
       },
     );
+  }
+
+  TextStyle _getCardTextColor(AsyncSnapshot<Pokemon> snapshot) {
+    final bool isSecondType = snapshot.data!.types.length > 1;
+    final Types lastType =
+        isSecondType ? snapshot.data!.types[1] : snapshot.data!.types[0];
+
+    final bool isWhite = lastType.type.name == 'dark' ||
+        lastType.type.name == 'steel' ||
+        lastType.type.name == 'fighting';
+    return TextStyle(color: isWhite ? Colors.white : Colors.black);
   }
 }

@@ -2,6 +2,7 @@ import 'package:dex/actions/PokeApi.dart';
 import 'package:dex/components/PokemonAbilities.dart';
 import 'package:dex/components/PokemonBaseInfo.dart';
 import 'package:dex/components/PokemonOtherInfo.dart';
+import 'package:dex/components/PokemonTypes.dart';
 import 'package:dex/model/Pokemon.dart';
 import 'package:dex/model/Species.dart';
 import 'package:dex/utils/GetColor.dart';
@@ -34,13 +35,6 @@ class _PokemonPageState extends State<PokemonPage> {
               });
               return SingleChildScrollView(
                 child: Container(
-                  decoration: BoxDecoration(
-                    gradient: LinearGradient(
-                      colors: getColor(widget.pokemon.types),
-                      begin: FractionalOffset.topCenter,
-                      end: FractionalOffset.bottomCenter,
-                    ),
-                  ),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -52,19 +46,22 @@ class _PokemonPageState extends State<PokemonPage> {
                                 widget.pokemon.sprites.frontDefault),
                           ),
                           Flexible(
-                            child: Text(snapshot
-                                .data!.flavorTextEntries[0].flavorText
-                                .replaceAll("\n", " ")
-                                .replaceAll("\f", "")),
+                            child: Text(
+                              snapshot.data!.flavorTextEntries[0].flavorText
+                                  .replaceAll("\n", " ")
+                                  .replaceAll("\f", ""),
+                            ),
                           ),
                         ],
                       ),
                       PokemonBaseInfo(stats: widget.pokemon.stats),
                       PokemonAbilities(abilities: widget.pokemon.abilities),
                       PokemonOtherInfo(
-                          genus: genera.genus,
-                          height: widget.pokemon.height,
-                          weight: widget.pokemon.weight),
+                        genus: genera.genus,
+                        height: widget.pokemon.height,
+                        weight: widget.pokemon.weight,
+                      ),
+                      PokemonTypes(types: widget.pokemon.types),
                     ],
                   ),
                 ),
